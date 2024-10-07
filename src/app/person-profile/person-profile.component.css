@@ -1,0 +1,72 @@
+
+.person-card {
+  flex: 0 0 auto;
+  min-width: 300px;
+  max-width: 300px;
+  background-color: white;
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+}
+
+.m-0-8{
+  margin: 0 0 8px;
+}
+
+.location-icon{
+  color: #dadada;
+  font-size: large;
+}
+
+.person-card img {
+  width: 100% !important;    
+  min-height: 300px;           
+  max-height: 400px !important;           
+  object-fit: cover;        
+  object-position: top;    
+  border-top-left-radius: 4px;        
+  border-top-right-radius: 4px;      
+  border-bottom-left-radius: 0;       
+  border-bottom-right-radius: 0; 
+}
+
+.closeIcon{
+  background: transparent !important;
+  box-shadow: none;
+  border: 0.5px solid #dadada;
+}
+
+.doneIcon{
+  box-shadow: none;
+  color: white;
+}
+
+.c-blue-label{
+  color: #0057ff;
+}
+
+.c-green-label{
+  color: #00ba0e;
+}
+
+.box-info{
+  border: 0.5px solid #dadada;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: smaller;
+}
+
+@media (min-width: 1024px) {
+  .person-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .person-card {
+    min-width: 100%; 
+    max-width: 100%; 
+  }
+}

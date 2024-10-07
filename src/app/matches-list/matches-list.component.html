@@ -1,0 +1,31 @@
+<div class="px-4 container">
+  <div class="flex gap-5 p-1">
+    <label class="font-bold font-large c-white">My Matches</label>
+    <label class="c-white">({{people.length}} profiles pending with me)</label>
+  </div>
+  <div class="people-list-container">
+    <div class="person-card" *ngFor="let person of people">
+      <img [src]="person.imageUrl" alt="{{ person.name }}'s image" width="100" />
+      <div class="p-1">
+        <div class="flex gap-5 items-base">
+          <h2 class="m-0-8">{{ person.name }}</h2>
+          <span class="f-smaller">{{ person.education }}</span>
+        </div>
+        <div class="flex gap-5">
+          <div class="box-info"><span>{{ person.age }} Yrs</span></div>
+          <div class="box-info"><span>{{ person.height }}</span></div>
+          <div class="box-info"><span>{{ person.caste }}</span></div>
+          <div class="box-info"><span>{{ person.language }}</span></div>
+        </div>
+        <div class="flex f-smaller pt-10">
+          <mat-icon class="location-icon">location_on</mat-icon>
+          <span>{{ person.address }}</span>
+        </div>
+        <div class="flex gap-5 pt-10">
+          <button class="bc-primary grow" (click)="openPersonDialog(person)" mat-flat-button color="warn">Yes</button>
+          <button class="w-20" (click)="no(person.id)" mat-stroked-button>No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="person-card" (swiperight)="onSwipeRight()" (swipeleft)="onSwipeLeft()">
+  <img class="w-full" [src]="person.imageUrl" alt="{{ person.name }}'s image" width="100" />
+  <div class="p-1 px-4">
+    <div class="flex gap-10">
+      <div *ngIf="person.verifiedAccount" class="flex f-smaller">
+        <mat-icon class="location-icon c-blue-label">verified_user</mat-icon>
+        <span class="f-smaller c-blue-label">Verified</span>
+      </div>
+      <div *ngIf="person.premiumNRI" class="flex f-smaller">
+        <mat-icon class="location-icon c-green-label">assistant_photo</mat-icon>
+        <span class="f-smaller c-green-label">Premium NRI</span>
+      </div>
+    </div>
+    <div class="flex gap-5 items-base">
+      <h2 class="m-0-8">{{ person.name }}</h2>
+      <span class="f-smaller">{{ person.education }}</span>
+    </div>
+    <div class="flex gap-5">
+      <div class="box-info"><span>{{ person.age }} Yrs</span></div>
+      <div class="box-info"><span>{{ person.height }}</span></div>
+      <div class="box-info"><span>{{ person.caste }}</span></div>
+      <div class="box-info"><span>{{ person.language }}</span></div>
+    </div>
+    <div class="flex f-smaller pt-10">
+      <mat-icon class="location-icon">location_on</mat-icon>
+      <span>{{ person.address }}</span>
+    </div>
+    <div class="flex justify-between pt-10">
+      <div class="flex items-center">
+        <button mat-mini-fab color="accent" tabindex="-1" class="closeIcon f-smaller no-border" (click)="onShortlist()">
+          <mat-icon *ngIf="person.shortlisted" class="c-primary">star</mat-icon>
+          <mat-icon *ngIf="!person.shortlisted" class="c-primary">star_border</mat-icon>
+        </button>
+        <span class="f-smaller">Shortlist</span>
+      </div>
+      <div class="flex gap-5 items-center">
+        <span>{{person.gender === 'male'? 'Like him?' : 'Like her?'}}</span>
+        <button mat-mini-fab color="accent" tabindex="-1" class="bc-primary closeIcon" (click)="onNotInterested()">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button mat-mini-fab color="accent" tabindex="-1" class="bc-primary doneIcon" (click)="onInterested()">
+          <mat-icon>done</mat-icon>
+        </button>
+      </div>
+    </div>
+    
+  </div>
+</div>
